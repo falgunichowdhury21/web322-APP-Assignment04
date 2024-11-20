@@ -1,0 +1,42 @@
+<div class="container">
+    <h2>Items</h2>
+    <% if (items.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item ID</th>
+                    <th>Title</th>
+                    <th>Post Date</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Published</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% items.forEach(item => { %>
+                    <tr>
+                        <td><%= item.id %></td>
+                        <td><%= item.title %></td>
+                        <td><%= item.postDate %></td>
+                        <td><%= item.category %></td>
+                        <td><%= item.price.toFixed(2) %></td>
+                        <td><%= item.published ? 'true' : 'false' %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No items found.</p>
+    <% } %>
+    <% if (items && items.length > 0) { %>
+        <ul>
+            <% items.forEach(function(item) { %>
+                <li><%= item.title %></li>
+            <% }); %>
+        </ul>
+    <% } else { %>
+        <p>No items available.</p>
+    <% } %>
+</div>
+</div>
+</div>

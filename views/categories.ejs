@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Categories</h2>
+    <% if (categories.length) { %>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Category ID</th>
+                    <th>Category Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% categories.forEach(category => { %>
+                    <tr>
+                        <td><a href="/items?category=<%= category.id %>"><%= category.id %></a></td>
+                        <td><a href="/items?category=<%= category.id %>"><%= category.category %></a></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No categories found.</p>
+    <% } %>
+</div>
